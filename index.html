@@ -1,135 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página personal de [Tu Nombre], titulado en DAM con un máster en IA e IG Data.">
-  <title>[Tu Nombre] - Perfil Profesional</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Si tienes un archivo CSS para estilos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página profesional de Rafael Portillo García, desarrollador DAM con Máster en IA y Big Data." />
+  <title>Rafael Portillo García - Perfil Profesional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
-      color: #333;
+      color: #222;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #4CAF50;
+      background-color: #2e7d32;
       color: white;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     header h1 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
       margin: 0;
     }
 
-    section {
+    main {
       padding: 20px;
-      margin: 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .about, .skills, .projects {
-      margin-bottom: 30px;
+    section {
+      margin-bottom: 40px;
     }
 
     h2 {
-      color: #4CAF50;
+      color: #2e7d32;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
     }
 
     .projects ul {
-      list-style-type: none;
+      list-style: none;
       padding: 0;
     }
 
     .projects li {
-      background-color: #fff;
-      margin: 10px 0;
-      padding: 10px;
+      background: #fff;
+      padding: 15px;
       border: 1px solid #ddd;
-      border-radius: 5px;
+      border-left: 5px solid #2e7d32;
+      border-radius: 6px;
+      margin-bottom: 15px;
     }
 
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
+    .projects h3 {
+      margin-top: 0;
     }
 
     a {
-      color: #4CAF50;
+      color: #2e7d32;
       text-decoration: none;
     }
 
+    a:hover {
+      text-decoration: underline;
+    }
+
     .contact-info {
-      list-style-type: none;
+      list-style: none;
       padding: 0;
     }
 
     .contact-info li {
-      margin: 5px 0;
+      margin: 8px 0;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>Rafael Portillo García</h1>
-    <p>Desarrollador de App Multiplataforma | Máster en IA y Big Data</p>
+    <p>Desarrollador de Apps Multiplataforma | Máster en IA y Big Data</p>
   </header>
 
-  <!-- Sección de Sobre mí -->
-  <section class="about">
-    <h2>Sobre mí</h2>
-    <p>
-      Soy un profesional titulado en Desarrollo de Aplicaciones Multiplataforma (DAM) con un máster en Inteligencia Artificial y Big Data. Tengo una gran pasión por el desarrollo de soluciones innovadoras, trabajando con tecnologías emergentes como la IA, el análisis de datos y la programación web.
-    </p>
-  </section>
+  <main>
+    <section class="about" aria-labelledby="sobre-mi">
+      <h2 id="sobre-mi">Sobre mí</h2>
+      <p>
+        Soy desarrollador titulado en Desarrollo de Aplicaciones Multiplataforma (DAM) y poseo un máster en Inteligencia Artificial y Big Data. Me apasiona crear soluciones innovadoras aplicando tecnologías emergentes como la IA, el análisis de datos y el desarrollo web moderno.
+      </p>
+    </section>
 
-  <!-- Sección de Habilidades -->
-  <section class="skills">
-    <h2>Habilidades</h2>
-    <ul>
-      <li>Lenguajes de programación: Java, Python, Dart</li>
-      <li>Inteligencia Artificial: Machine Learning, Redes Neuronales, Deep Learning, TensorFlow, Keras, PyTorch</li>
-      <li>Bases de datos: MySQL, PostgreSQL, MongoDB, Firebase</li>
-      <li>Big Data: Hadoop, Spark, AWS</li>
-      <li>Herramientas: Git, Visual Studio Code, GitHub, Android Studio, Flutter</li>
-    </ul>
-  </section>
+    <section class="skills" aria-labelledby="habilidades">
+      <h2 id="habilidades">Habilidades</h2>
+      <ul>
+        <li><strong>Lenguajes:</strong> Java, Python, Dart</li>
+        <li><strong>IA:</strong> Machine Learning, Redes Neuronales, Deep Learning, TensorFlow, Keras, PyTorch</li>
+        <li><strong>Bases de datos:</strong> MySQL, PostgreSQL, MongoDB, Firebase</li>
+        <li><strong>Big Data:</strong> Hadoop, Spark, AWS</li>
+        <li><strong>Herramientas:</strong> Git, Visual Studio Code, GitHub, Android Studio, Flutter</li>
+      </ul>
+    </section>
 
-  <!-- Sección de Proyectos -->
-  <section class="projects">
-    <h2>Proyectos Destacados</h2>
-    <ul>
-      <li>
-        <h3>Proyecto de IA: Clasificación de Imágenes</h3>
-        <p>Desarrollé una aplicación de clasificación de imágenes utilizando redes neuronales convolucionales (CNN) en TensorFlow.</p>
-        <a href="https://github.com/[tu-usuario]/proyecto-ia" target="_blank">Ver en GitHub</a>
-      </li>
-      <li>
-        <h3>Proyecto Web: Plataforma de Análisis de Datos</h3>
-        <p>Creé una plataforma web para analizar grandes volúmenes de datos utilizando Node.js y visualización con D3.js.</p>
-        <a href="https://github.com/[tu-usuario]/proyecto-web" target="_blank">Ver en GitHub</a>
-      </li>
-    </ul>
-  </section>
+    <section class="projects" aria-labelledby="proyectos">
+      <h2 id="proyectos">Proyectos Destacados</h2>
+      <ul>
+        <li>
+          <h3>Clasificación de Imágenes con IA</h3>
+          <p>Desarrollé una app de clasificación de imágenes mediante redes neuronales convolucionales (CNN) con TensorFlow.</p>
+          <a href="https://github.com/Rafa-PG-Dev/proyecto-ia" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+        </li>
+        <li>
+          <h3>Plataforma Web de Análisis de Datos</h3>
+          <p>Implementé una plataforma para análisis de grandes volúmenes de datos con Node.js y visualización interactiva usando D3.js.</p>
+          <a href="https://github.com/Rafa-PG-Dev/proyecto-web" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+        </li>
+      </ul>
+    </section>
 
-  <!-- Sección de Contacto -->
-  <section class="contact">
-    <h2>Contacto</h2>
-    <ul class="contact-info">
-      <li>Email: <a href="mailto:[tu-email]">rafaportillog@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/[tu-linkedin]" target="_blank">[tu-linkedin]</a></li>
-      <li>GitHub: <a href="https://github.com/[tu-usuario]" target="_blank">Rafa-PG-Dev</a></li>
-    </ul>
-  </section>
+    <section class="contact" aria-labelledby="contacto">
+      <h2 id="contacto">Contacto</h2>
+      <ul class="contact-info">
+        <li>Email: <a href="mailto:rafaportillog@gmail.com">rafaportillog@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/rafael-portillo-garcia" target="_blank" rel="noopener noreferrer">Rafael Portillo García</a></li>
+        <li>GitHub: <a href="https://github.com/Rafa-PG-Dev" target="_blank" rel="noopener noreferrer">Rafa-PG-Dev</a></li>
+      </ul>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Rafael Portillo García. Todos los derechos reservados.</p>
   </footer>
