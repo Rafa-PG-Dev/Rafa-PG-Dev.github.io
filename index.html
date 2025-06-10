@@ -14,12 +14,12 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
-      color: #222;
+      color: #333;
       line-height: 1.6;
     }
 
     header {
-      background-color: #2e7d32;
+      background-color: #0277bd; /* Azul vibrante */
       color: white;
       padding: 40px 20px;
       text-align: center;
@@ -37,11 +37,12 @@
       height: auto;
       border-radius: 50%;
       margin-right: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     }
 
     header h1 {
       margin-bottom: 10px;
-      font-size: 2.5rem;
+      font-size: 2.8rem; /* Tamaño más grande */
     }
 
     header p {
@@ -60,10 +61,11 @@
     }
 
     h2 {
-      color: #2e7d32;
+      color: #0277bd;
       border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
       margin-bottom: 15px;
+      font-size: 2rem;
     }
 
     ul {
@@ -83,21 +85,31 @@
       background: #fff;
       padding: 15px;
       border: 1px solid #ddd;
-      border-left: 5px solid #2e7d32;
+      border-left: 5px solid #0277bd; /* Azul vibrante */
       border-radius: 6px;
       margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra suave */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projects li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Efecto hover */
     }
 
     .projects h3 {
       margin-top: 0;
+      font-size: 1.5rem;
     }
 
     a {
-      color: #2e7d32;
+      color: #0277bd;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     a:hover {
+      color: #01579b;
       text-decoration: underline;
     }
 
@@ -108,6 +120,7 @@
 
     .contact-info li {
       margin: 8px 0;
+      font-size: 1.1rem;
     }
 
     footer {
@@ -116,6 +129,15 @@
       text-align: center;
       padding: 15px 10px;
       font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -170,8 +192,6 @@
       <h2 id="contacto">Contacto</h2>
       <ul class="contact-info">
         <li>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaportillog@gmail.com&su=Asunto%20del%20correo&body=Escribe%20tu%20mensaje%20aquí" target="_blank">rafaportillog@gmail.com</a></li>
-
-
         <li>LinkedIn: <a href="https://www.linkedin.com/in/rafael-portillo-garcia" target="_blank" rel="noopener noreferrer">Rafael Portillo García</a></li>
         <li>GitHub: <a href="https://github.com/Rafa-PG-Dev" target="_blank" rel="noopener noreferrer">Rafa-PG-Dev</a></li>
       </ul>
