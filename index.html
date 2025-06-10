@@ -25,6 +25,20 @@
       text-align: center;
     }
 
+    header .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+    }
+
+    header .header-content img {
+      width: 120px;
+      height: auto;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
     header h1 {
       margin-bottom: 10px;
       font-size: 2.5rem;
@@ -108,8 +122,13 @@
 <body>
 
   <header>
-    <h1>Rafael Portillo García</h1>
-    <p>Desarrollador de Apps Multiplataforma | Máster en IA y Big Data</p>
+    <div class="header-content">
+      <img src="Foto.jpg" alt="Foto de Rafael Portillo García" class="profile-photo" />
+      <div>
+        <h1>Rafael Portillo García</h1>
+        <p>Desarrollador de Apps Multiplataforma | Máster en IA y Big Data</p>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -135,13 +154,13 @@
       <h2 id="proyectos">Proyectos Destacados</h2>
       <ul>
         <li>
-          <h3>Clasificación de Imágenes con IA</h3>
-          <p>Desarrollé una app de clasificación de imágenes mediante redes neuronales convolucionales (CNN) con TensorFlow.</p>
-          <a href="https://github.com/Rafa-PG-Dev/proyecto-ia" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+          <h3>Modelo de predicción de coches de segunda mano</h3>
+          <p>Desarrollé una app de predicción de precios de coches de segunda mano mediante machine learning utilizando python como backend gracias al algoritmo de XgBoost y utilicé Flutter para el frontend.</p>
+          <p><a href="https://github.com/Rafa-PG-Dev/proyecto-ia" target="_blank" rel="noopener noreferrer">Ver en GitHub</a></p>
         </li>
         <li>
-          <h3>Plataforma Web de Análisis de Datos</h3>
-          <p>Implementé una plataforma para análisis de grandes volúmenes de datos con Node.js y visualización interactiva usando D3.js.</p>
+          <h3>Aplicación Multiplataforma KPI para la gestión de indicadores académicos</h3>
+          <p>Implementé una app multiplataforma con Flutter para gestionar indicadores académicos, integrando Firebase para la autenticación y almacenamiento de datos.</p>
           <a href="https://github.com/Rafa-PG-Dev/proyecto-web" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
         </li>
       </ul>
