@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio de Rafael Portillo García - Desarrollador de Apps y Máster en IA y Big Data." />
+  <title>Rafael Portillo García - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --color-primary: #00bcd4;
+      --color-primary-dark: #007a8a;
+      --color-bg-dark: #0f0f0f;
+      --color-bg-light: #fefefe;
+      --color-text-dark: #e0e0e0;
+      --color-text-light: #111;
+      --font-heading: 'Roboto Slab', serif;
+      --font-body: 'Roboto', sans-serif;
+      --shadow-primary: 0 0 20px rgba(0, 188, 212, 0.4);
+      --transition-speed: 0.4s;
+    }
+
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg-dark);
+      color: var(--color-text-dark);
+      scroll-behavior: smooth;
+      transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body.light-mode {
+      background-color: var(--color-bg-light);
+      color: var(--color-text-light);
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #111;
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.75);
+      backdrop-filter: saturate(180%) blur(10px);
+      transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      font-weight: 600;
+    }
+
+    body.light-mode nav {
+      background: #f9f9f9;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    nav h1 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      color: inherit;
+      user-select: none;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: color var(--transition-speed);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-primary);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--color-primary);
+      outline: none;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    body.light-mode nav a {
+      color: #444;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 96px 24px 72px;
+      background: linear-gradient(135deg, #121212 0%, #1f1f1f 100%);
+      animation: fadeInSlideDown 1.2s ease forwards;
+      transition: background var(--transition-speed) ease;
+      position: relative;
+      overflow: visible;
+    }
+
+    body.light-mode header {
+      background: linear-gradient(135deg, #f4f7f8 0%, #d8dbde 100%);
+    }
+
+    .profile-photo {
+      width: auto;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow-primary);
+      border: 3px solid var(--color-primary);
+      object-fit: cover;
+      filter: drop-shadow(0 4px 6px rgba(0, 188, 212, 0.3));
+      transition: box-shadow var(--transition-speed), border-color var(--transition-speed);
+      cursor: default;
+    }
+
+    body.light-mode .profile-photo {
+      box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
+      border-color: var(--color-primary-dark);
+      filter: drop-shadow(0 2px 4px rgba(0, 188, 212, 0.15));
+    }
+
+    header h1 {
+      font-family: var(--font-heading);
+      font-size: 3.6rem;
+      margin-bottom: 8px;
+      font-weight: 900;
+      user-select: none;
+      color: var(--color-primary);
+      text-shadow:
+        0 0 10px var(--color-primary),
+        0 0 25px var(--color-primary);
+      animation: pulseGlow 3s ease-in-out infinite alternate;
+      transition: color var(--transition-speed), text-shadow var(--transition-speed);
+    }
+
+    body.light-mode header h1 {
+      color: var(--color-primary-dark);
+      text-shadow:
+        0 0 6px var(--color-primary-dark),
+        0 0 16px var(--color-primary-dark);
+      animation: pulseGlowLight 3s ease-in-out infinite alternate;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ccc;
+      letter-spacing: 0.04em;
+      max-width: 480px;
+      margin: 0 auto;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+      transition: color var(--transition-speed);
+    }
+
+    body.light-mode header p {
+      color: #555;
+      text-shadow: none;
+    }
+
+    /* MAIN SECTIONS */
+    main {
+      max-width: 960px;
+      margin: 0 auto 64px;
+      padding: 0 24px;
+    }
+
+    section {
+      margin-bottom: 72px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 2.3rem;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--color-primary);
+      display: inline-block;
+      letter-spacing: 0.04em;
+    }
+
+    body.light-mode h2 {
+      border-color: var(--color-primary-dark);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    body.light-mode ul {
+      color: #333;
+    }
+
+    li {
+      margin-bottom: 14px;
+      line-height: 1.65;
+      letter-spacing: 0.02em;
+      transition: color 0.3s;
+    }
+
+    .projects li {
+      background: #1e1e1e;
+      padding: 24px 28px;
+      border-left: 5px solid var(--color-primary);
+      border-radius: 10px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 30px rgba(0, 188, 212, 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+      cursor: default;
+    }
+
+    .projects li:hover,
+    .projects li:focus-within {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(0, 188, 212, 0.35);
+      background-color: #262626;
+    }
+
+    body.light-mode .projects li {
+      background: #f6f8fa;
+      border-left-color: var(--color-primary-dark);
+      color: #222;
+      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.12);
+    }
+
+    body.light-mode .projects li:hover,
+    body.light-mode .projects li:focus-within {
+      box-shadow: 0 12px 30px rgba(0, 188, 212, 0.22);
+      background-color: #e2e6ea;
+    }
+
+    .projects li h3 {
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.03em;
+      color: var(--color-primary);
+      transition: color 0.3s ease;
+    }
+
+    body.light-mode .projects li h3 {
+      color: var(--color-primary-dark);
+    }
+
+    .projects li p {
+      margin-bottom: 12px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+      outline: none;
+      color: #00acc1;
+    }
+
+    body.light-mode a {
+      color: var(--color-primary-dark);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.95rem;
+      color: #777;
+      letter-spacing: 0.05em;
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+      user-select: none;
+    }
+
+    body.light-mode footer {
+      background-color: #f1f1f1;
+      color: #444;
+    }
+
+    /* BUTTON TOGGLE THEME */
+    #toggle-theme {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--color-primary);
+      border: none;
+      border-radius: 30px;
+      padding: 12px 18px;
+      cursor: pointer;
+      box-shadow: 0 0 18px var(--color-primary);
+      color: white;
+      font-size: 1.25rem;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1600;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #toggle-theme:hover,
+    #toggle-theme:focus {
+      background: #0097a7;
+      box-shadow: 0 0 25px #0097a7;
+      outline: none;
+    }
+
+    /* Animations */
+    @keyframes fadeInSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        text-shadow:
+          0 0 12px var(--color-primary),
+          0 0 35px var(--color-primary);
+      }
+
+      50% {
+        text-shadow:
+          0 0 22px var(--color-primary),
+          0 0 50px var(--color-primary);
+      }
+
+      100% {
+        text-shadow:
+          0 0 12px var(--color-primary),
+          0 0 35px var(--color-primary);
+      }
+    }
+
+    @keyframes pulseGlowLight {
+      0% {
+        text-shadow:
+          0 0 6px var(--color-primary-dark),
+          0 0 15px var(--color-primary-dark);
+      }
+
+      50% {
+        text-shadow:
+          0 0 10px var(--color-primary-dark),
+          0 0 28px var(--color-primary-dark);
+      }
+
+      100% {
+        text-shadow:
+          0 0 6px var(--color-primary-dark),
+          0 0 15px var(--color-primary-dark);
+      }
+    }
+
+    /* Accessibility focus styles */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      outline-radius: 4px;
+    }
+
+    .lista-habilidades {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .lista-habilidades li {
+      position: relative;
+      padding-left: 32px;
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.7;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .lista-habilidades li::before {
+      content: '\f058';
+      /* Ícono de check */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--color-primary);
+      font-size: 1.1rem;
+    }
+
+    .lista-habilidades li:hover {
+      transform: translateX(4px);
+      color: var(--color-primary);
+    }
+
+    body.light-mode .lista-habilidades li {
+      color: #333;
+    }
+
+    body.light-mode .lista-habilidades li::before {
+      color: var(--color-primary-dark);
+    }
+
+    .descripcion {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: 1rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .resaltado {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .cv-box {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      color: #fff;
+      max-width: 400px;
+      margin: 3rem auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.light-mode .cv-box {
+      background-color: #f0f0f0;
+      /* fondo claro, tipo gris muy claro */
+      color: #222;
+      /* texto oscuro */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid #ccc;
+    }
+
+    .cv-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+    }
+
+    .cv-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-box p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+
+    .cv-button {
+      display: inline-block;
+      background-color: var(--color-primary, #00bcd4);
+      color: #000;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background-color: #00d9ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <h1>Rafael Portillo</h1>
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="Foto.jpg" alt="Foto de Rafael Portillo García" class="profile-photo" />
+    <h1>Rafael Portillo García</h1>
+    <p class="descripcion">
+      <span class="resaltado">Desarrollador de Apps Multiplataforma</span> |
+      <span class="resaltado">Máster en IA y Big Data</span>
+    </p>
+
+    <!-- 📄 Caja de Descargar CV -->
+    <div class="cv-box" data-aos="fade-up">
+      <h3>¿Quieres saber más?</h3>
+      <p>Puedes descargar mi CV completo aquí:</p>
+      <a href="CV_Rafa.pdf" class="cv-button" download>📄 Descargar CV</a>
+    </div>
+
+  </header>
+
+  <main>
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <ul>
+        <li>Soy desarrollador titulado en Desarrollo de Aplicaciones Multiplataforma (DAM) y poseo un máster en
+          Inteligencia Artificial y Big Data. Me apasiona crear soluciones innovadoras aplicando tecnologías emergentes
+          como la IA, el análisis de datos y el desarrollo de aplicaciones.
+      </ul>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <ul class="lista-habilidades">
+        <li>
+          <strong>Lenguajes de Programación:</strong> Java, Python, Dart, JavaScript
+        </li>
+        <li>
+          <strong>Inteligencia Artificial:</strong> Machine Learning, Redes Neuronales, Deep Learning, TensorFlow,
+          Keras, PyTorch
+        </li>
+        <li>
+          <strong>Bases de Datos:</strong> MySQL, PostgreSQL, MongoDB, Firebase
+        </li>
+        <li>
+          <strong>Big Data:</strong> Hadoop, Spark, AWS, Azure
+        </li>
+        <li>
+          <strong>Herramientas de Desarrollo:</strong> Visual Studio Code, Android Studio, NetBeans, Eclipse, Flutter
+        </li>
+        <li>
+          <strong>Control de Versiones:</strong> Git y GitHub (uso avanzado: ramas, merges, pull requests)
+        </li>
+        <li>
+          <strong>Entorno de Desarrollo:</strong> Ubuntu (Linux) como sistema operativo principal
+        </li>
+        <li>
+          <strong>DevOps y Automatización:</strong> ShellScript, Kubernetes, Jenkins, Azure, GitHub Actions
+        </li>
+      </ul>
+    </section>
+
+    <section id="proyectos" class="projects">
+      <h2 id="proyectos">Proyectos Destacados</h2>
+      <ul>
+        <li>
+          <h3>Modelo de predicción de coches de segunda mano</h3>
+          <p>Desarrollé una app de predicción de precios de coches de segunda mano mediante machine learning utilizando
+            python como backend gracias al algoritmo de XgBoost y utilicé Flutter para el frontend.</p>
+          <p><a href="https://github.com/Rafa-PG-Dev/prediccion_coches.git" target="_blank"
+              rel="noopener noreferrer">Ver en
+              GitHub</a></p>
+        </li>
+        <li>
+          <h3>Aplicación Multiplataforma KPI para la gestión de indicadores académicos</h3>
+          <p>Implementé una app multiplataforma con Flutter para gestionar indicadores académicos, integrando Firebase
+            para la autenticación y almacenamiento de datos.</p>
+          <a href="https://github.com/Rafa-PG-Dev/Control_Gr-fico_KPI-s.git" target="_blank"
+            rel="noopener noreferrer">Ver en
+            GitHub</a>
+        </li>
+        <li>
+          <h3>Sistema de control de stock</h3>
+          <p>Desarrollé una app móvil de control de stock para gestionar inventarios y notificaciones, utilizando
+            exclusivamente Dart y Flutter para la implementación tanto de la lógica como de la interfaz.</p>
+          <p><a href="https://github.com/Rafa-PG-Dev/Control_stock.git" target="_blank" rel="noopener noreferrer">Ver en
+              GitHub</a></p>
+        </li>
+        <li>
+          <h3>Portfolio Web</h3>
+          <p>Diseño y desarrollo de esta página personal con HTML, CSS, JavaScript y animaciones modernas.</p>
+          <a href="https://github.com/Rafa-PG-Dev/Rafa-PG-Dev.github.io" target="_blank" rel="noopener noreferrer"
+            aria-label="Visitar portfolio web">Visitar en github</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2 id="contacto">Contacto</h2>
+      <ul class="contact-info">
+        <li>📧 Email:
+          <a href="mailto:rafaportillog98@gmail.com">
+            rafaportillog98@gmail.com
+          </a>
+        </li>
+        <li>📞 Teléfono:
+          <a href="tel:683527049">
+            +34 683 527 049
+          </a>
+        </li>
+        <li>💼 LinkedIn:
+          <a href="https://www.linkedin.com/in/rafael-portillo-garc%C3%ADa-01241533a/" target="_blank"
+            rel="noopener noreferrer">
+            Rafael Portillo García
+          </a>
+        </li>
+        <li>💻 GitHub:
+          <a href="https://github.com/Rafa-PG-Dev" target="_blank" rel="noopener noreferrer">
+            Rafa-PG-Dev
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Rafael Portillo García. Todos los derechos reservados.
+  </footer>
+
+  <button id="toggle-theme" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+    <i class="fa-solid fa-moon"></i>
+  </button>
+
+  <script>
+
+    const sections = document.querySelectorAll("section");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+
+
+    const toggleThemeBtn = document.getElementById("toggle-theme");
+    const body = document.body;
+    const icon = toggleThemeBtn.querySelector("i");
+
+    const setThemeIcon = () => {
+      if (body.classList.contains("light-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+    };
+
+    toggleThemeBtn.addEventListener("click", () => {
+      body.classList.toggle("light-mode");
+      setThemeIcon();
+    });
+
+    setThemeIcon();
+  </script>
+</body>
+
+</html>
